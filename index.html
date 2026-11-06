@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cctv5直播-央视体育频道在线观看_体育赛事直播节目表</title>
+<meta name="description" content="cctv5直播页面汇集央视体育频道的在线观看入口、节目表与赛事看点，帮助球迷按时间找到想看的内容，并了解频道定位与常见观看问题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f3a'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ff5a1f' stroke-width='4'/%3E%3Cpath d='M27 24l16 8-16 8z' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#0b1f3a;
+  --navy-2:#132c4f;
+  --orange:#ff5a1f;
+  --orange-soft:#fff1ea;
+  --ink:#1c2430;
+  --muted:#5d6a7a;
+  --line:#e3e8ef;
+  --bg:#f6f8fb;
+  --white:#ffffff;
+  --radius:14px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,31,58,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:19px;letter-spacing:.3px;white-space:nowrap}
+.logo .mark{width:34px;height:34px;flex:0 0 34px}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{
+  color:#c9d6e6;font-size:14.5px;padding:8px 12px;border-radius:8px;
+  transition:background .18s,color .18s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,255,255,.1);color:#fff}
+.header-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--orange);color:#fff;font-size:14px;font-weight:600;
+  padding:9px 16px;border-radius:999px;white-space:nowrap;
+  transition:filter .18s;
+}
+.header-cta:hover{filter:brightness(1.08)}
+@media(max-width:860px){
+  .header-inner{height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  .nav{order:3;width:100%;justify-content:flex-start}
+  .nav a{padding:6px 9px;font-size:13.5px}
+}
+
+/* hero */
+.hero{
+  background:linear-gradient(150deg,var(--navy) 0%,var(--navy-2) 62%,#1b3b63 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(255,90,31,.35),transparent 68%);
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;
+  padding:56px 0 52px;align-items:center;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,90,31,.16);border:1px solid rgba(255,90,31,.45);
+  color:#ffb59a;font-size:13px;padding:5px 12px;border-radius:999px;margin-bottom:16px;
+}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(255,90,31,.22)}
+h1{font-size:40px;line-height:1.22;font-weight:800;letter-spacing:.5px;margin-bottom:16px}
+.hero p.lead{color:#c7d5e6;font-size:16px;max-width:34em;margin-bottom:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--orange);color:#fff;font-weight:700;font-size:15.5px;
+  padding:13px 24px;border-radius:10px;transition:transform .16s,filter .16s;
+}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(255,255,255,.28);color:#e7eef8;font-size:15px;
+  padding:12px 22px;border-radius:10px;transition:background .16s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-note{margin-top:18px;font-size:13px;color:#93a7bf}
+.hero-art{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:20px;
+}
+.hero-art h2{font-size:15px;color:#ffb59a;font-weight:600;letter-spacing:.6px;margin-bottom:14px}
+.art-row{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:14px;
+}
+.art-row:last-child{border-bottom:none}
+.art-row .t{color:#9fb3ca;font-variant-numeric:tabular-nums;flex:0 0 66px}
+.art-row .n{flex:1;color:#eaf1fa}
+.art-row .tag{font-size:11.5px;color:var(--orange);border:1px solid rgba(255,90,31,.5);padding:1px 8px;border-radius:999px;white-space:nowrap}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:30px;padding:38px 0 40px}
+  h1{font-size:30px}
+}
+
+/* section base */
+.section{padding:56px 0}
+.section.alt{background:var(--white)}
+.sec-head{max-width:720px;margin-bottom:30px}
+.sec-kicker{
+  display:inline-block;font-size:13px;font-weight:700;color:var(--orange);
+  letter-spacing:1px;margin-bottom:8px;
+}
+h2.sec-title{font-size:26px;font-weight:800;line-height:1.35;letter-spacing:.3px}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:15px}
+
+/* quick grid */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;transition:box-shadow .2s,transform .2s,border-color .2s;
+}
+.card:hover{box-shadow:0 10px 26px rgba(11,31,58,.08);transform:translateY(-2px);border-color:#cdd8e5}
+.card .ico{
+  width:42px;height:42px;border-radius:11px;background:var(--orange-soft);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.card p{color:var(--muted);font-size:14.5px}
+.card .inline-link{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--orange)}
+.card .inline-link:hover{text-decoration:underline}
+
+/* schedule table */
+.schedule{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.sch-row{
+  display:grid;grid-template-columns:96px 1fr 132px;gap:16px;align-items:center;
+  padding:16px 22px;border-bottom:1px solid var(--line);font-size:14.5px;
+}
+.sch-row:last-child{border-bottom:none}
+.sch-row.head{background:#f0f4fa;font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.4px}
+.sch-row .time{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.sch-row .name b{font-weight:700}
+.sch-row .name span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.sch-row .status{font-size:12.5px;color:var(--orange);border:1px solid #ffd2c0;background:#fff7f3;padding:3px 10px;border-radius:999px;text-align:center;justify-self:start}
+.sch-row .status.done{color:#6b7f96;border-color:#dde5ee;background:#f5f8fc}
+.sch-note{font-size:13px;color:var(--muted);padding:14px 22px;background:#fafcfe;border-top:1px solid var(--line)}
+@media(max-width:700px){
+  .sch-row{grid-template-columns:74px 1fr;gap:10px;padding:14px 16px}
+  .sch-row.head{display:none}
+  .sch-row .status{grid-column:2;justify-self:start;margin-top:4px}
+}
+
+/* article text */
+.prose{max-width:760px}
+.prose p{color:#33404f;font-size:15.5px;margin-bottom:16px}
+.prose p strong{color:var(--navy)}
+.prose h3{font-size:18px;font-weight:700;margin:26px 0 10px;color:var(--navy)}
+.link-strong{color:var(--orange);font-weight:600;border-bottom:1px solid rgba(255,90,31,.35)}
+.link-strong:hover{border-bottom-color:var(--orange)}
+
+/* faq */
+.faq-item{border-bottom:1px solid var(--line);padding:18px 0}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-item h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.faq-item p{color:var(--muted);font-size:14.5px}
+
+/* download strip */
+.dl-strip{
+  background:linear-gradient(120deg,var(--navy),#1d3f6b);
+  border-radius:18px;color:#fff;padding:34px 32px;
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;
+}
+.dl-strip h2{font-size:21px;font-weight:800;margin-bottom:6px}
+.dl-strip p{color:#b9c9dc;font-size:14.5px;max-width:36em}
+.btn-download{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--orange);color:#fff;font-weight:700;font-size:15px;
+  padding:13px 26px;border-radius:10px;pointer-events:none;
+}
+.btn-download[aria-disabled="true"]{opacity:.92}
+.dl-tip{font-size:12.5px;color:#93a7bf;margin-top:8px}
+
+/* footer */
+.site-footer{background:var(--navy);color:#a9bccf;padding:40px 0 30px;margin-top:10px}
+.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:26px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:18px;margin-bottom:10px}
+.footer-brand .mark{width:30px;height:30px}
+.footer-desc{font-size:13.5px;max-width:34em;line-height:1.7}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px}
+.footer-links a:hover{color:#fff}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:20px;font-size:12.5px;color:#7f95ac}
+
+@media(max-width:900px){
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .section{padding:40px 0}
+  h2.sec-title{font-size:22px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="cctv5直播 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#132c4f"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#ff5a1f" stroke-width="4"/>
+        <path d="M27 24l16 8-16 8z" fill="#ff5a1f"/>
+      </svg>
+      <span>cctv5直播</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#watch">在线观看</a>
+      <a href="#schedule">节目表</a>
+      <a href="#guide">频道定位</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">客户端</a>
+    </nav>
+    <a class="header-cta" href="#watch">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      进入观看
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="badge"><span class="dot"></span>央视体育频道 · 在线观看入口</span>
+        <h1>cctv5直播</h1>
+        <p class="lead">cctv5直播是央视体育频道的网络观看入口。这里把频道定位、当日节目表和常见观看问题集中在一页，方便你按时间找到想看的赛事与栏目，再进入对应的直播页面。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#watch">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            查看观看入口
+          </a>
+          <a class="btn-ghost" href="#schedule">先看节目表</a>
+        </div>
+        <p class="hero-note">节目安排以央视体育频道当日实际播出为准，跨零点赛事建议提前确认日期。</p>
+      </div>
+      <aside class="hero-art" aria-label="节目节奏示意">
+        <h2>一天里的常见节奏</h2>
+        <div class="art-row"><span class="t">上午</span><span class="n">体育新闻与赛事重播</span><span class="tag">资讯</span></div>
+        <div class="art-row"><span class="t">午间</span><span class="n">体坛快讯类栏目</span><span class="tag">快讯</span></div>
+        <div class="art-row"><span class="t">傍晚</span><span class="n">体育新闻汇总</span><span class="tag">新闻</span></div>
+        <div class="art-row"><span class="t">晚间</span><span class="n">重点赛事直播时段</span><span class="tag">直播</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="watch">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">在线观看</span>
+        <h2 class="sec-title">找到cctv5直播的三种常见方式</h2>
+        <p>不同设备适合的入口不一样。先确认自己要看的是频道直播还是单场赛事，再选择对应的观看路径，能少走很多弯路。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+          </div>
+          <h3>网页端观看</h3>
+          <p>在浏览器中打开央视体育频道的官方页面，选择频道直播即可。网页端适合临时查看，不需要安装额外软件，但对网络稳定性要求较高。</p>
+          <a class="inline-link" href="#faq">网页端卡顿怎么办 →</a>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          </div>
+          <h3>移动端观看</h3>
+          <p>手机和平板上可通过央视体育相关应用观看cctv5直播。移动端更适合通勤和碎片时间，建议在Wi-Fi环境下观看高码率画面。</p>
+          <a class="inline-link" href="#download">查看客户端说明 →</a>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3z"/><path d="M8 3l4 4 4-4"/></svg>
+          </div>
+          <h3>大屏观看</h3>
+          <p>电视或投影设备上，可通过有线电视信号或具备央视体育频道授权的电视应用收看。大屏观看适合整场赛事，画面与解说同步性更好。</p>
+          <a class="inline-link" href="#guide">了解频道定位 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="schedule">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">节目表</span>
+        <h2 class="sec-title">按时间段安排你的cctv5直播观看</h2>
+        <p>下表为频道常见节目类型的时段分布示意，用于规划观看，不替代官方当日节目单。具体场次、开赛时间与栏目名称请以央视体育频道公布的信息为准。</p>
+      </div>
+      <div class="schedule">
+        <div class="sch-row head">
+          <span>时段</span><span>常见内容</span><span>观看提示</span>
+        </div>
+        <div class="sch-row">
+          <span class="time">06:00–09:00</span>
+          <span class="name"><b>早间体育资讯</b><span>新闻播报与前一日赛事回顾</span></span>
+          <span class="status done">偏资讯</span>
+        </div>
+        <div class="sch-row">
+          <span class="time">12:00–13:00</span>
+          <span class="name"><b>午间体坛快讯</b><span>赛果速览与当日看点预告</span></span>
+          <span class="status done">偏快讯</span>
+        </div>
+        <div class="sch-row">
+          <span class="time">18:00–19:30</span>
+          <span class="name"><b>晚间体育新闻</b><span>当日重点赛事综合报道</span></span>
+          <span class="status done">偏新闻</span>
+        </div>
+        <div class="sch-row">
+          <span class="time">19:30–23:00</span>
+          <span class="name"><b>重点赛事直播</b><span>联赛、杯赛与综合赛事为主</span></span>
+          <span class="status">直播时段</span>
+        </div>
+        <div class="sch-row">
+          <span class="time">23:00 以后</span>
+          <span class="name"><b>延播与海外赛事</b><span>部分赛事因时差安排在深夜</span></span>
+          <span class="status">注意日期</span>
+        </div>
+        <div class="sch-note">提示：跨零点开始的比赛，在节目表中通常记在开赛当日。查找cctv5直播场次时，先确认开赛日期再核对时段，可以减少错过比赛的情况。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">频道定位</span>
+        <h2 class="sec-title">cctv5直播播什么，适合谁看</h2>
+      </div>
+      <div class="prose">
+        <p>央视体育频道是国内覆盖面较广的体育专业频道，<strong>cctv5直播</strong>的内容以体育赛事转播和体育新闻为核心。足球、篮球、排球、乒乓球、羽毛球、游泳、田径等项目都会在频道中出现，具体转播安排随赛季和赛事日历变化。</p>
+        <p>对普通观众来说，cctv5直播的价值在于稳定的解说与信号质量，以及重点赛事时段的集中呈现。对需要跟踪赛程的球迷来说，节目表比单场回放更实用：先看时段，再决定是否守在屏幕前。</p>
+        <h3>观看前值得确认的三件事</h3>
+        <p>第一是赛事是否有转播权，部分联赛的单场转播会分散在不同频道或平台；第二是开赛时间是否因时差落在深夜；第三是观看设备是否支持当前码率，网络不稳定时优先降低清晰度而不是反复切换入口。</p>
+        <p>如果你只是想了解赛果，cctv5直播的新闻栏目已经足够；如果想完整看完一场比赛，建议提前十分钟进入页面，避免开场阶段反复缓冲。相关观看入口与常见问题可以在本页 <a class="link-strong" href="#faq">常见问题</a> 区域继续查看。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">常见问题</span>
+        <h2 class="sec-title">关于cctv5直播，观众问得最多的几件事</h2>
+        <p>以下回答基于频道的一般播出与观看方式，不涉及具体某一场赛事的转播承诺。</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="faq-item">
+            <h3>cctv5直播需要付费吗？</h3>
+            <p>频道本身通过有线电视和官方网络平台提供，是否收费取决于你使用的观看渠道。第三方平台可能设有会员机制，建议优先选择官方入口。</p>
+          </div>
+          <div class="faq-item">
+            <h3>为什么节目表和实际播出的不一样？</h3>
+            <p>赛事延期、加时或临时调整转播都会影响排期。cctv5直播以频道实际播出为准，节目表适合做大致规划，临场变化需以官方信息确认。</p>
+          </div>
+        </div>
+        <div>
+          <div class="faq-item">
+            <h3>手机上能看cctv5直播吗？</h3>
+            <p>可以。通过央视体育相关应用或官方网页，在移动网络或Wi-Fi下都能观看。流量观看建议留意套餐，长时间看高清赛事消耗较大。</p>
+          </div>
+          <div class="faq-item">
+            <h3>错过直播还能回看吗？</h3>
+            <p>部分栏目和赛事提供回看或点播，是否可用取决于具体内容与平台。赛后新闻和集锦通常更容易找到，完整回看则要看你使用的入口。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="download">
+    <div class="wrap">
+      <div class="dl-strip">
+        <div>
+          <h2>把观看入口放到手边</h2>
+          <p>安装央视体育相关客户端后，可以在移动设备上直接进入cctv5直播，并查看节目提醒。下载文件将在正式发布后提供。</p>
+          <p class="dl-tip">当前为占位入口，暂不可下载。</p>
+        </div>
+        <div>
+          <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+            下载
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1d3f6b"/>
+            <circle cx="32" cy="32" r="17" fill="none" stroke="#ff5a1f" stroke-width="4"/>
+            <path d="M27 24l16 8-16 8z" fill="#ff5a1f"/>
+          </svg>
+          <span>cctv5直播</span>
+        </div>
+        <p class="footer-desc">cctv5直播主题首页，汇总央视体育频道的观看方式、节目表时段与常见问题，帮助观众按时间找到想看的赛事内容。</p>
+      </div>
+      <nav class="footer-links" aria-label="页尾导航">
+        <a href="#watch">在线观看</a>
+        <a href="#schedule">节目表</a>
+        <a href="#guide">频道定位</a>
+        <a href="#faq">常见问题</a>
+        <a href="#download">客户端</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>节目安排以央视体育频道实际播出为准。</span>
+      <span>cctv5直播 · 本页内容仅作观看信息参考</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
