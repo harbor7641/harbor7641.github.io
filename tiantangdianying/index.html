@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天堂电影院 下载-经典影片高清资源_播放地址与字幕说明</title>
+<meta name="description" content="天堂电影院 下载页面说明这部经典影片的高清资源情况、画质与字幕选择、观看与离线保存的常见方式，并给出可用的播放入口与下载区说明。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1b2e'/%3E%3Ccircle cx='32' cy='30' r='14' fill='none' stroke='%23e8b04b' stroke-width='4'/%3E%3Ccircle cx='32' cy='30' r='4' fill='%23e8b04b'/%3E%3Crect x='14' y='48' width='36' height='5' rx='2.5' fill='%23e8b04b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1d1b2e;
+  --ink-soft:#3c3950;
+  --paper:#f7f3ea;
+  --paper-2:#fffdf8;
+  --gold:#c8902f;
+  --gold-soft:#e8b04b;
+  --line:#e2d9c6;
+  --muted:#6d6880;
+  --shadow:0 10px 30px rgba(29,27,46,.09);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"Noto Serif SC","Songti SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+.sans{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,243,234,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:12px 0;
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo .mark{
+  width:38px;height:38px;border-radius:10px;background:var(--ink);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.logo .mark svg{width:24px;height:24px;}
+.logo .brand{
+  font-size:1.06rem;font-weight:700;letter-spacing:.02em;color:var(--ink);
+  white-space:nowrap;
+}
+nav.main{display:flex;gap:22px;font-size:.94rem;}
+nav.main a{
+  text-decoration:none;color:var(--ink-soft);padding:4px 0;
+  border-bottom:2px solid transparent;transition:.2s;
+}
+nav.main a:hover{border-bottom-color:var(--gold);color:var(--ink);}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:1rem;cursor:pointer;color:var(--ink);}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(720px 320px at 82% 8%,rgba(232,176,75,.18),transparent 70%),
+    linear-gradient(180deg,#1d1b2e 0%,#262242 60%,#2c2749 100%);
+  color:#f4efe2;
+  padding:56px 0 64px;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 9px);
+  opacity:.5;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:center;
+  position:relative;z-index:2;
+}
+.eyebrow{
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:.78rem;letter-spacing:.22em;color:var(--gold-soft);
+  margin:0 0 14px;text-transform:uppercase;
+}
+h1{
+  font-size:clamp(1.9rem,4.4vw,3rem);
+  line-height:1.25;margin:0 0 18px;font-weight:800;letter-spacing:.01em;
+}
+.hero p.lead{
+  margin:0 0 26px;max-width:36em;color:#d8d2e2;font-size:1rem;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:.95rem;font-weight:600;text-decoration:none;
+  padding:12px 22px;border-radius:999px;transition:.2s;border:1px solid transparent;
+}
+.btn-gold{background:var(--gold-soft);color:#201c2c;}
+.btn-gold:hover{background:#f0c26b;}
+.btn-ghost{border-color:rgba(244,239,226,.4);color:#f4efe2;}
+.btn-ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft);}
+.btn[aria-disabled="true"]{opacity:.75;cursor:not-allowed;pointer-events:none;}
+.hero-note{
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:.8rem;color:#a49dba;margin-top:16px;
+}
+.facts{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;}
+.facts div{font-size:.85rem;color:#bdb6cd;}
+.facts strong{display:block;font-size:1.15rem;color:#f4efe2;font-weight:700;letter-spacing:.02em;}
+
+/* hero art */
+.hero-art{
+  position:relative;border-radius:18px;overflow:hidden;
+  border:1px solid rgba(232,176,75,.35);
+  background:linear-gradient(160deg,rgba(232,176,75,.12),rgba(255,255,255,.03));
+  padding:16px;
+}
+.hero-art svg{width:100%;height:auto;}
+
+/* sections */
+section{padding:66px 0;}
+.sec-head{max-width:44em;margin-bottom:34px;}
+.sec-kicker{
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:.76rem;letter-spacing:.2em;color:var(--gold);
+  margin:0 0 10px;
+}
+h2{font-size:clamp(1.35rem,2.6vw,1.85rem);margin:0 0 12px;line-height:1.35;font-weight:800;}
+.sec-head p{margin:0;color:var(--muted);}
+.alt{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
+  padding:26px 24px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;
+}
+.card .ico{
+  width:42px;height:42px;border-radius:10px;background:#f2e7cf;
+  display:grid;place-items:center;margin-bottom:16px;flex:0 0 auto;
+}
+.card .ico svg{width:22px;height:22px;stroke:var(--gold);}
+.card h3{font-size:1.06rem;margin:0 0 10px;font-weight:700;}
+.card p{margin:0;font-size:.94rem;color:var(--ink-soft);}
+.card .meta{
+  margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:.8rem;color:var(--muted);
+}
+
+/* two column */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;}
+.prose p{margin:0 0 16px;color:var(--ink-soft);}
+.prose p:last-child{margin-bottom:0;}
+.panel{
+  background:#fffdf8;border:1px solid var(--line);border-radius:14px;
+  padding:26px;box-shadow:var(--shadow);
+}
+.panel h3{margin:0 0 14px;font-size:1.05rem;}
+.spec{list-style:none;margin:0;padding:0;}
+.spec li{
+  display:flex;justify-content:space-between;gap:16px;
+  padding:11px 0;border-bottom:1px dashed var(--line);
+  font-size:.92rem;
+}
+.spec li:last-child{border-bottom:none;}
+.spec .k{color:var(--muted);font-family:"Noto Sans SC","PingFang SC",sans-serif;font-size:.86rem;}
+.spec .v{font-weight:600;text-align:right;}
+
+/* steps */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.step{
+  counter-increment:s;position:relative;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:24px 20px;
+}
+.step::before{
+  content:counter(s,decimal-leading-zero);
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:.82rem;font-weight:700;color:var(--gold);
+  display:block;margin-bottom:10px;letter-spacing:.08em;
+}
+.step h3{font-size:1rem;margin:0 0 8px;}
+.step p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+
+/* download area */
+.dl-box{
+  background:linear-gradient(150deg,#1d1b2e,#2b2647);
+  color:#f4efe2;border-radius:18px;padding:38px 34px;
+  display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center;
+  box-shadow:0 16px 40px rgba(29,27,46,.22);
+}
+.dl-box h2{color:#f4efe2;margin-bottom:10px;}
+.dl-box p{margin:0;color:#c4bdd4;font-size:.94rem;max-width:38em;}
+.dl-side{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
+.dl-side .btn{width:100%;justify-content:center;}
+.dl-tip{
+  font-family:"Noto Sans SC","PingFang SC",sans-serif;
+  font-size:.78rem;color:#9c95b2;
+}
+
+/* faq */
+.faq{border-top:1px solid var(--line);}
+.faq details{
+  border-bottom:1px solid var(--line);padding:18px 0;
+}
+.faq summary{
+  cursor:pointer;font-weight:700;font-size:1rem;list-style:none;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"+";font-family:"Noto Sans SC",sans-serif;color:var(--gold);
+  font-size:1.2rem;line-height:1;flex:0 0 auto;
+}
+.faq details[open] summary::after{content:"–";}
+.faq p{margin:12px 0 0;color:var(--ink-soft);font-size:.94rem;}
+
+/* footer */
+footer.site{
+  background:#1d1b2e;color:#b8b1c9;padding:46px 0 30px;
+  font-size:.9rem;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:32px;}
+footer .brand-line{color:#f4efe2;font-weight:700;font-size:1rem;margin-bottom:10px;}
+footer p{margin:0 0 8px;max-width:30em;}
+footer h4{color:#f4efe2;font-size:.92rem;margin:0 0 12px;font-weight:700;}
+footer ul{list-style:none;margin:0;padding:0;}
+footer li{margin-bottom:8px;}
+footer a{color:#b8b1c9;text-decoration:none;}
+footer a:hover{color:var(--gold-soft);}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.12);padding-top:20px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:.82rem;color:#8b8499;
+}
+
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;}
+  .hero-art{max-width:420px;}
+  .cards{grid-template-columns:1fr;}
+  .split{grid-template-columns:1fr;gap:28px;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .dl-box{grid-template-columns:1fr;padding:30px 24px;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:680px){
+  nav.main{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:var(--paper-2);border-bottom:1px solid var(--line);
+    flex-direction:column;gap:0;padding:8px 4vw;
+  }
+  nav.main.open{display:flex;}
+  nav.main a{padding:12px 0;border-bottom:1px solid var(--line);}
+  .menu-btn{display:block;}
+  .head-inner{position:relative;}
+  .steps{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  section{padding:48px 0;}
+  .hero{padding:40px 0 48px;}
+  .logo .brand{font-size:.95rem;}
+  .facts{gap:18px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="11" r="6" stroke="#e8b04b" stroke-width="2"/>
+          <circle cx="12" cy="11" r="1.8" fill="#e8b04b"/>
+          <rect x="4" y="19" width="16" height="2.4" rx="1.2" fill="#e8b04b"/>
+        </svg>
+      </span>
+      <span class="brand">天堂电影院 下载</span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mainnav" id="menuBtn">菜单</button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <a href="#about">影片概况</a>
+      <a href="#quality">版本画质</a>
+      <a href="#howto">保存方式</a>
+      <a href="#download">下载区</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title" style="padding-top:56px;">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">CINEMA PARADISO · 1988</p>
+        <h1 id="hero-title">天堂电影院 下载</h1>
+        <p class="lead">
+          朱塞佩·托纳多雷的《天堂电影院》是意大利电影史上被反复提起的作品。本页围绕“天堂电影院 下载”这一需求，说明不同版本的画质差异、字幕与音轨选择，以及在线观看与离线保存时需要注意的事项，帮助你找到合适的片源再决定是否留存。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#download">前往下载区</a>
+          <a class="btn btn-ghost" href="#quality">先看版本区别</a>
+        </div>
+        <p class="hero-note">本页不托管影片文件，仅说明资源类型与版本信息。</p>
+        <div class="facts">
+          <div><strong>1988</strong>意大利上映</div>
+          <div><strong>约 155 分钟</strong>国际公映版</div>
+          <div><strong>173 分钟</strong>导演剪辑版</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 360 300" role="presentation">
+          <defs>
+            <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8b04b" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#e8b04b" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect x="26" y="34" width="308" height="188" rx="12" fill="#151326" stroke="#3a3458"/>
+          <rect x="44" y="52" width="272" height="152" rx="6" fill="#0e0c1b"/>
+          <path d="M300 40 L150 204 L360 204 Z" fill="url(#beam)"/>
+          <circle cx="180" cy="128" r="26" fill="none" stroke="#e8b04b" stroke-width="3"/>
+          <circle cx="180" cy="128" r="7" fill="#e8b04b"/>
+          <path d="M120 128 h34 M206 128 h34" stroke="#e8b04b" stroke-width="2.4" stroke-linecap="round"/>
+          <rect x="58" y="214" width="244" height="8" rx="4" fill="#3a3458"/>
+          <g fill="#e8b04b" opacity=".85">
+            <circle cx="72" cy="258" r="4"/><circle cx="104" cy="258" r="4"/>
+            <circle cx="136" cy="258" r="4"/><circle cx="168" cy="258" r="4"/>
+            <circle cx="200" cy="258" r="4"/><circle cx="232" cy="258" r="4"/>
+            <circle cx="264" cy="258" r="4"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">影片概况</p>
+        <h2 id="about-title">一部关于放映厅与成长的作品</h2>
+        <p>了解影片本身，才能判断哪个版本值得保存。以下内容围绕影片事实与常见片源展开。</p>
+      </div>
+      <div class="split">
+        <div class="prose">
+          <p>
+            《天堂电影院》由朱塞佩·托纳多雷执导，1988 年在意大利上映。故事以西西里小镇的“天堂电影院”为中心，讲述少年托托与放映员艾佛特之间跨越数十年的情谊。影片曾获戛纳电影节评审团大奖，并在次年获得奥斯卡最佳外语片奖。
+          </p>
+          <p>
+            正因为它被多次修复与重映，市面上以“天堂电影院 下载”为目标的资源也分成了几类：影院公映版、导演剪辑版，以及各地发行商修复后的蓝光版本。三者的片长、画幅和结局处理并不完全一致，选择前最好先确认自己需要哪一版。
+          </p>
+          <p>
+            对普通观众来说，公映版节奏更紧凑；对想完整理解人物关系的观众，导演剪辑版补充了大量成年托托的情感线。两者没有绝对优劣，只是观看目的不同。
+          </p>
+        </div>
+        <aside class="panel" aria-label="影片基础资料">
+          <h3>基础资料</h3>
+          <ul class="spec">
+            <li><span class="k">原名</span><span class="v">Nuovo Cinema Paradiso</span></li>
+            <li><span class="k">导演</span><span class="v">朱塞佩·托纳多雷</span></li>
+            <li><span class="k">上映年份</span><span class="v">1988 年</span></li>
+            <li><span class="k">语言</span><span class="v">意大利语 / 西西里方言</span></li>
+            <li><span class="k">主要奖项</span><span class="v">奥斯卡最佳外语片</span></li>
+            <li><span class="k">常见版本</span><span class="v">公映版 / 导演剪辑版</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY -->
+  <section id="quality" class="alt" aria-labelledby="quality-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">版本与画质</p>
+        <h2 id="quality-title">下载前先分清三种片源</h2>
+        <p>同样是“天堂电影院 下载”，文件大小与观感差别往往来自分辨率、编码和修复来源。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+              <rect x="3" y="5" width="18" height="12" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </span>
+          <h3>标清 DVD 转录</h3>
+          <p>分辨率通常为 720×480 或 720×576，文件体积小，适合旧设备或网络条件有限时观看。画面颗粒感明显，暗部细节有限。</p>
+          <div class="meta">常见封装：AVI / MKV · 体积约 1–2 GB</div>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+              <path d="M4 18V8l8-4 8 4v10"/>
+              <path d="M4 18h16M9 18v-5h6v5"/>
+            </svg>
+          </span>
+          <h3>1080p 蓝光修复</h3>
+          <p>由修复版蓝光转制，色彩与对比度经过校正，是目前较均衡的选择。多数版本保留了意大利语原声，并附带中文字幕轨。</p>
+          <div class="meta">常见封装：MKV / MP4 · 体积约 4–10 GB</div>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+              <path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/>
+            </svg>
+          </span>
+          <h3>4K 修复与导演剪辑版</h3>
+          <p>近年修复的 4K 版本细节更丰富，但文件更大，对播放设备解码能力有要求。导演剪辑版片长约 173 分钟，需确认字幕是否匹配。</p>
+          <div class="meta">常见封装：MKV · 体积 15 GB 以上</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOWTO -->
+  <section id="howto" aria-labelledby="howto-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">保存方式</p>
+        <h2 id="howto-title">从观看到离线保存的四个步骤</h2>
+        <p>无论最终选择哪种片源，流程大致相同。以下步骤按实际操作顺序排列。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确认版本</h3>
+          <p>先看片长与发行信息，区分公映版和导演剪辑版，避免字幕与画面不同步。</p>
+        </div>
+        <div class="step">
+          <h3>核对画质与音轨</h3>
+          <p>检查分辨率、编码格式与音轨语言，优先选择带中文字幕的意大利语原声版本。</p>
+        </div>
+        <div class="step">
+          <h3>选择保存位置</h3>
+          <p>大文件建议放在空间充足的硬盘分区，保存前确认剩余容量大于文件体积。</p>
+        </div>
+        <div class="step">
+          <h3>校验完整性</h3>
+          <p>播放开头与结尾片段，确认无花屏、无缺字幕，再决定是否长期保留。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" class="alt" aria-labelledby="dl-title">
+    <div class="wrap">
+      <div class="dl-box">
+        <div>
+          <h2 id="dl-title">下载区说明</h2>
+          <p>
+            本页为“天堂电影院 下载”主题的信息页，集中整理版本差异与保存注意事项。影片文件由各资源站自行提供，本页不直接托管。下载入口将在资源确认后开放，请先参考上方的画质说明选择合适版本。
+          </p>
+        </div>
+        <div class="dl-side">
+          <a class="btn btn-gold" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+          <span class="dl-tip">入口暂未开放，开放后此处提供对应版本文件。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">常见问题</p>
+        <h2 id="faq-title">关于天堂电影院 下载的几点疑问</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>公映版和导演剪辑版应该选哪个？</summary>
+          <p>如果只想重温主线故事，公映版更紧凑；如果想补全成年托托的感情线，导演剪辑版更完整。两个版本结局的呈现方式不同，建议先看公映版再看剪辑版。</p>
+        </details>
+        <details>
+          <summary>为什么有些版本字幕不同步？</summary>
+          <p>常见原因是字幕按公映版时间轴制作，却被用于导演剪辑版。下载前应确认字幕文件与片源版本一致，或选择内嵌字幕的封装。</p>
+        </details>
+        <details>
+          <summary>下载后画面卡顿怎么办？</summary>
+          <p>高码率 4K 文件对解码性能要求较高，可尝试更换播放器或降低输出分辨率。若文件本身损坏，重新获取完整文件通常更有效。</p>
+        </details>
+        <details>
+          <summary>本页会提供直接下载链接吗？</summary>
+          <p>本页当前作为信息说明页存在，下载入口开放后会在此处更新。页面内容以版本选择和保存建议为主，不代替资源站的服务。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="brand-line">天堂电影院 下载</p>
+        <p>围绕经典影片《天堂电影院》的版本、画质与保存方式提供说明，帮助访问者在下载前做出合适选择。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#about">影片概况</a></li>
+          <li><a href="#quality">版本画质</a></li>
+          <li><a href="#howto">保存方式</a></li>
+          <li><a href="#download">下载区</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关说明</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#quality">片源对比</a></li>
+          <li><a href="#download">下载入口</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>本页内容仅作影片信息整理，不存储影片文件。</span>
+      <span>天堂电影院 下载 · 信息页</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainnav');
+  if(!btn || !nav) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 680){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
