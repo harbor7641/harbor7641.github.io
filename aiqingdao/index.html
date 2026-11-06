@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱情岛-爱情岛交友社区_爱情岛话题与岛民分享</title>
+<meta name="description" content="爱情岛是一个以岛民分享为核心的交友社区首页，汇集爱情岛话题、岛民故事、兴趣小组与互动入口，帮你快速了解爱情岛的社区氛围与参与方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5c6b'/%3E%3Cpath d='M32 48c-9-6-16-11-16-18a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 7-7 12-16 18z' fill='%23ffd9a0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --deep:#0f5c6b;
+  --deep2:#0a4451;
+  --sea:#12798c;
+  --sand:#f7efe2;
+  --sand2:#efe3cf;
+  --coral:#e4674f;
+  --ink:#17343a;
+  --muted:#5c7378;
+  --line:#d8e3e0;
+  --radius:16px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--sand);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,239,226,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;gap:18px;
+  height:68px;max-width:var(--maxw);margin:0 auto;padding:0 22px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.16rem;color:var(--deep);letter-spacing:.5px;white-space:nowrap}
+.logo .mark{width:34px;height:34px;flex:0 0 34px}
+nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav.main a{
+  font-size:.94rem;color:var(--muted);padding:7px 12px;border-radius:999px;
+  transition:.2s;
+}
+nav.main a:hover{background:var(--sand2);color:var(--deep)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;font-weight:600;font-size:.95rem;padding:10px 22px;
+  transition:.2s;cursor:pointer;border:1px solid transparent;
+}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 6px 16px rgba(228,103,79,.28)}
+.btn-primary:hover{background:#d2553d;transform:translateY(-1px)}
+.btn-ghost{background:transparent;border-color:var(--deep);color:var(--deep)}
+.btn-ghost:hover{background:var(--deep);color:#fff}
+.btn-disabled{
+  background:var(--sand2);color:var(--muted);border-color:var(--line);
+  pointer-events:none;cursor:default;opacity:.85;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,var(--deep) 0%,var(--sea) 62%,#1a8fa0 100%);
+  color:#fdf7ee;
+  padding:64px 0 74px;
+}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
+.hero h1{
+  font-size:clamp(2.1rem,5vw,3.1rem);
+  line-height:1.18;letter-spacing:1px;font-weight:800;
+  margin-bottom:18px;
+}
+.hero .lead{font-size:1.04rem;color:#e2f2f0;max-width:34em;margin-bottom:26px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn-ghost{border-color:#bfe6e3;color:#f4fbfa}
+.hero .btn-ghost:hover{background:#f4fbfa;color:var(--deep)}
+.hero-meta{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+.hero-meta div{font-size:.86rem;color:#bfe6e3}
+.hero-meta strong{display:block;font-size:1.28rem;color:#fff;font-weight:700}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 18px 34px rgba(0,0,0,.22))}
+.hero::after{
+  content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(255,217,160,.28),transparent 68%);
+  border-radius:50%;
+}
+
+/* ---------- section base ---------- */
+section{padding:64px 0}
+.sec-head{max-width:640px;margin-bottom:34px}
+.kicker{
+  display:inline-block;font-size:.78rem;letter-spacing:2px;font-weight:700;
+  color:var(--coral);text-transform:uppercase;margin-bottom:10px;
+}
+.sec-head h2{font-size:clamp(1.4rem,3vw,1.85rem);line-height:1.35;font-weight:800;color:var(--deep);margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:.98rem}
+
+/* ---------- topics cards ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:#fffdf8;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;transition:.22s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(15,92,107,.1);border-color:#bcd6d2}
+.card .ic{width:44px;height:44px;margin-bottom:16px}
+.card h3{font-size:1.06rem;color:var(--deep);margin-bottom:8px;font-weight:700}
+.card p{font-size:.93rem;color:var(--muted)}
+.card .tag{
+  display:inline-block;margin-top:14px;font-size:.78rem;color:var(--sea);
+  background:#e7f3f2;border-radius:999px;padding:3px 11px;
+}
+
+/* ---------- stories ---------- */
+.stories{background:var(--sand2)}
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.story{
+  background:#fffdf8;border-radius:var(--radius);padding:28px 26px;
+  border:1px solid #e3d7c2;display:flex;flex-direction:column;gap:14px;
+}
+.story blockquote{font-size:1rem;line-height:1.85;color:var(--ink)}
+.story .who{display:flex;align-items:center;gap:12px;font-size:.86rem;color:var(--muted)}
+.avatar{
+  width:38px;height:38px;border-radius:50%;flex:0 0 38px;
+  display:grid;place-items:center;font-weight:700;color:#fff;font-size:.9rem;
+  background:linear-gradient(140deg,var(--sea),var(--deep));
+}
+.story .who strong{color:var(--deep);font-weight:700}
+
+/* ---------- island map / steps ---------- */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.steps{list-style:none;display:flex;flex-direction:column;gap:22px}
+.steps li{display:flex;gap:16px;align-items:flex-start}
+.steps .num{
+  flex:0 0 34px;width:34px;height:34px;border-radius:10px;
+  background:var(--deep);color:#ffd9a0;font-weight:800;font-size:.95rem;
+  display:grid;place-items:center;
+}
+.steps h3{font-size:1rem;color:var(--deep);margin-bottom:4px;font-weight:700}
+.steps p{font-size:.92rem;color:var(--muted)}
+.art-box{background:#fffdf8;border:1px solid var(--line);border-radius:24px;padding:22px}
+
+/* ---------- faq ---------- */
+.faq{background:var(--deep);color:#eaf6f4}
+.faq .sec-head h2{color:#fff}
+.faq .sec-head p{color:#bfe6e3}
+.faq .kicker{color:#ffd9a0}
+details{
+  border-bottom:1px solid rgba(255,255,255,.14);
+  padding:18px 0;
+}
+details:first-of-type{border-top:1px solid rgba(255,255,255,.14)}
+summary{
+  cursor:pointer;font-weight:600;font-size:1rem;color:#fff;
+  list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:#ffd9a0;font-size:1.3rem;line-height:1;transition:.2s}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;font-size:.93rem;color:#c6e5e2;max-width:56em}
+
+/* ---------- join / cta band ---------- */
+.join{
+  background:linear-gradient(120deg,#ffd9a0,#f9c98f);
+  border-radius:26px;padding:48px 40px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+}
+.join h2{font-size:clamp(1.35rem,3vw,1.7rem);color:#5a2f14;font-weight:800;margin-bottom:8px}
+.join p{color:#7a4a26;font-size:.95rem;max-width:36em}
+.join .cta{display:flex;gap:12px;flex-wrap:wrap}
+.join .btn-primary{background:#5a2f14;box-shadow:0 8px 18px rgba(90,47,20,.25)}
+.join .btn-primary:hover{background:#3f1f0c}
+.join .btn-disabled{background:rgba(255,255,255,.55);color:#8a6234;border-color:rgba(90,47,20,.18)}
+
+/* ---------- footer ---------- */
+footer.site{
+  background:var(--deep2);color:#a9cfcd;padding:46px 0 34px;margin-top:64px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:30px}
+footer .logo{color:#fff;margin-bottom:12px}
+footer p{font-size:.88rem;line-height:1.85;max-width:32em}
+footer h4{color:#fff;font-size:.92rem;margin-bottom:12px;font-weight:700}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer ul a{font-size:.88rem;color:#a9cfcd;transition:.2s}
+footer ul a:hover{color:#ffd9a0}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.12);padding-top:20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:.82rem;color:#7fb0ae;
+}
+.src-note{font-size:.78rem;color:#7fb0ae;margin-top:10px}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .hero-art{max-width:420px;margin:0 auto}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr;gap:34px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .nav-inner{height:auto;padding:12px 18px;flex-wrap:wrap;gap:10px}
+  nav.main{margin-left:0;order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  nav.main a{white-space:nowrap}
+  .nav-inner>.btn{margin-left:auto}
+  section{padding:46px 0}
+  .hero{padding:46px 0 54px}
+  .grid-3{grid-template-columns:1fr}
+  .story-grid{grid-template-columns:1fr}
+  .join{padding:34px 24px;border-radius:20px}
+  .foot-grid{grid-template-columns:1fr}
+  .wrap{padding:0 18px}
+  .hero-meta{gap:18px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="logo" href="#top" aria-label="爱情岛首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0f5c6b"/>
+        <path d="M32 48c-9-6-16-11-16-18a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 7-7 12-16 18z" fill="#ffd9a0"/>
+      </svg>
+      <span>爱情岛</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#topics">岛内话题</a>
+      <a href="#stories">岛民故事</a>
+      <a href="#how">如何上岛</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+    <a class="btn btn-primary" href="#join">加入爱情岛</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>爱情岛</h1>
+        <p class="lead">爱情岛是一个以岛民分享为核心的交友社区。这里没有刻意的速配流程，更多是围绕真实生活展开的话题、故事与兴趣小组，让愿意慢慢认识彼此的人先聊起来，再决定要不要走近。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#join">加入爱情岛</a>
+          <a class="btn btn-ghost" href="#topics">先看看岛内话题</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>12</strong>个常驻兴趣小组</div>
+          <div><strong>每周</strong>更新岛内话题</div>
+          <div><strong>双向</strong>确认后才可私聊</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 360" role="presentation">
+          <defs>
+            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#bfe6e3"/>
+              <stop offset="1" stop-color="#7fc7c8"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="210" cy="300" rx="180" ry="34" fill="#0a4451" opacity=".35"/>
+          <path d="M40 268c40-22 90-22 130 0s90 22 130 0 60-18 80-10v46H40z" fill="url(#sea)"/>
+          <path d="M150 258c0-42 26-74 60-74s60 32 60 74z" fill="#f7efe2"/>
+          <path d="M176 258c0-30 15-52 34-52s34 22 34 52z" fill="#e4674f" opacity=".85"/>
+          <circle cx="210" cy="150" r="26" fill="#ffd9a0"/>
+          <path d="M210 190c-20 0-34 16-34 34h68c0-18-14-34-34-34z" fill="#0f5c6b"/>
+          <g fill="#0f5c6b" opacity=".9">
+            <rect x="66" y="196" width="6" height="46" rx="3"/>
+            <path d="M69 186c-14 0-24 10-24 22h48c0-12-10-22-24-22z"/>
+          </g>
+          <g fill="#0f5c6b" opacity=".75">
+            <rect x="336" y="206" width="6" height="42" rx="3"/>
+            <path d="M339 198c-12 0-21 9-21 19h42c0-10-9-19-21-19z"/>
+          </g>
+          <circle cx="106" cy="96" r="5" fill="#ffd9a0"/>
+          <circle cx="318" cy="86" r="4" fill="#ffd9a0"/>
+          <circle cx="360" cy="140" r="3" fill="#fff" opacity=".7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">岛内话题</span>
+        <h2>爱情岛上，人们先聊什么</h2>
+        <p>爱情岛的话题区按生活场景划分，不按外貌或条件筛选。每个小组都有自己的常驻岛民和固定讨论节奏，新人可以先潜水，找到想说话的那一栏。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e7f3f2"/><path d="M24 35c-6-4-11-8-11-13a5.5 5.5 0 0 1 11-2 5.5 5.5 0 0 1 11 2c0 5-5 9-11 13z" fill="#e4674f"/></svg>
+          <h3>慢热相识</h3>
+          <p>面向不习惯速配的人。先通过一个共同问题开始对话，聊满三轮再决定是否继续，节奏由双方共同掌握。</p>
+          <span class="tag">新人友好</span>
+        </article>
+        <article class="card">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e7f3f2"/><path d="M12 32h24M16 32V20l8-6 8 6v12" stroke="#0f5c6b" stroke-width="2.6" fill="none" stroke-linejoin="round"/></svg>
+          <h3>城市生活</h3>
+          <p>同城岛民分享周末去处、租房经验与通勤日常。话题从生活细节长出来，比自我介绍更容易接住下一句。</p>
+          <span class="tag">同城交流</span>
+        </article>
+        <article class="card">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e7f3f2"/><circle cx="24" cy="19" r="6" fill="none" stroke="#0f5c6b" stroke-width="2.6"/><path d="M13 36c1.5-6 6-9 11-9s9.5 3 11 9" fill="none" stroke="#0f5c6b" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <h3>关系观点</h3>
+          <p>关于边界、沟通与长期关系的讨论。爱情岛鼓励写清楚自己的看法，也鼓励在别人观点下留下具体回应。</p>
+          <span class="tag">深度讨论</span>
+        </article>
+        <article class="card">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e7f3f2"/><path d="M14 30l8-8 5 5 7-9" fill="none" stroke="#0f5c6b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 34h20" stroke="#e4674f" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <h3>兴趣小组</h3>
+          <p>徒步、摄影、读书、烘焙等常驻小组，按兴趣聚人。共同爱好提供了现成的话题，也降低了开口的成本。</p>
+          <span class="tag">12 个小组</span>
+        </article>
+        <article class="card">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e7f3f2"/><path d="M24 13l3.4 7 7.6 1.1-5.5 5.3 1.3 7.6-6.8-3.6-6.8 3.6 1.3-7.6-5.5-5.3 7.6-1.1z" fill="none" stroke="#0f5c6b" stroke-width="2.4" stroke-linejoin="round"/></svg>
+          <h3>岛民推荐</h3>
+          <p>岛民互相推荐一本好书、一部电影或一家小店。推荐理由写成两三句，比单纯的链接更有参考价值。</p>
+          <span class="tag">共同清单</span>
+        </article>
+        <article class="card">
+          <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#e7f3f2"/><path d="M15 18h18v13H22l-5 4v-4h-2z" fill="none" stroke="#0f5c6b" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <h3>匿名树洞</h3>
+          <p>不方便实名说的事，可以投进树洞。内容经人工查看后发布，评论区只保留具体的建议，不欢迎评判。</p>
+          <span class="tag">人工查看</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIES -->
+  <section id="stories" class="stories">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">岛民故事</span>
+        <h2>他们留在爱情岛上的几句话</h2>
+        <p>以下内容来自岛民在小组内的公开分享，经本人同意后展示。每个人上岛的原因不同，留下的理由却常常相似。</p>
+      </div>
+      <div class="story-grid">
+        <article class="story">
+          <blockquote>“我不太会写自我介绍，第一次发帖只写了一句‘最近在学做面包’。结果收到十几条回复，全是配方和失败经验。后来就和其中一个岛民约着一起烤了一次。”</blockquote>
+          <div class="who"><span class="avatar">林</span><div><strong>林舟</strong><br>加入爱情岛 8 个月 · 烘焙小组</div></div>
+        </article>
+        <article class="story">
+          <blockquote>“树洞里写过一段挺低落的时期，没想过会有回应。第二天看到有人留了很长一段话，没有劝我，只是讲了自己怎么过来的。那一刻觉得这个岛是可以待的。”</blockquote>
+          <div class="who"><span class="avatar">周</span><div><strong>周晚</strong><br>加入爱情岛 1 年 2 个月 · 匿名树洞</div></div>
+        </article>
+        <article class="story">
+          <blockquote>“我比较在意节奏。爱情岛的私聊要双方都点了确认才能开，这个设置让我敢在上面说话。先聊得来，再谈别的，顺序对了，人也就放松了。”</blockquote>
+          <div class="who"><span class="avatar">陈</span><div><strong>陈一</strong><br>加入爱情岛 5 个月 · 慢热相识</div></div>
+        </article>
+        <article class="story">
+          <blockquote>“同城小组里有人问周末去哪儿，我随手答了一个旧书店。后来那家店成了几个岛民常去的地方，群里还专门做了个书单。这种小事慢慢累积起来，就有归属感。”</blockquote>
+          <div class="who"><span class="avatar">许</span><div><strong>许南</strong><br>加入爱情岛 10 个月 · 城市生活</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="wrap split">
+      <div class="art-box" aria-hidden="true">
+        <svg viewBox="0 0 380 320" role="presentation">
+          <circle cx="190" cy="160" r="128" fill="#e7f3f2"/>
+          <path d="M190 250c0-52 30-92 68-92s68 40 68 92z" fill="#0f5c6b" opacity=".12"/>
+          <path d="M58 250c0-52 30-92 68-92s68 40 68 92z" fill="#0f5c6b" opacity=".12"/>
+          <path d="M124 246c0-44 28-78 66-78s66 34 66 78z" fill="#f7efe2" stroke="#0f5c6b" stroke-width="2"/>
+          <circle cx="190" cy="140" r="20" fill="#ffd9a0" stroke="#0f5c6b" stroke-width="2"/>
+          <path d="M190 172c-16 0-27 12-27 27h54c0-15-11-27-27-27z" fill="#0f5c6b"/>
+          <g stroke="#e4674f" stroke-width="2.4" fill="none" stroke-linecap="round">
+            <path d="M56 110l16 10"/><path d="M300 96l16-8"/><path d="M318 190l18 4"/>
+          </g>
+          <circle cx="190" cy="46" r="7" fill="#e4674f"/>
+          <path d="M190 62v14" stroke="#e4674f" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="sec-head">
+          <span class="kicker">如何上岛</span>
+          <h2>三步进入爱情岛的日常</h2>
+          <p>爱情岛不设复杂的准入流程，但要真正参与进来，通常要走过下面这三步。</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="num">1</span>
+            <div>
+              <h3>填写一份能聊的简介</h3>
+              <p>不必罗列条件，写下最近在做什么、想找人聊什么。简介会显示在你发言的小组里，方便同好找到你。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <div>
+              <h3>选两个小组先潜水</h3>
+              <p>浏览置顶话题和近期回复，熟悉语气再开口。新人第一帖会得到小组长的欢迎回复，不必担心冷场。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <div>
+              <h3>双方确认后开启私聊</h3>
+              <p>公开讨论里聊得投机，可以发出私聊邀请。对方同意后对话开启，任一方都可以随时结束，无需说明理由。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">常见问答</span>
+        <h2>上岛前，你可能想知道</h2>
+        <p>关于爱情岛的社区规则与使用方式，这里集中回答几个被问得最多的问题。</p>
+      </div>
+      <details open>
+        <summary>爱情岛是相亲平台吗？</summary>
+        <p>不完全是。爱情岛更接近一个以交友和关系话题为核心的社区，岛民通过小组讨论和公开话题认识彼此。这里没有条件筛选和系统匹配，是否进一步发展由双方自行决定。</p>
+      </details>
+      <details>
+        <summary>在爱情岛上发言需要实名吗？</summary>
+        <p>小组讨论与话题区使用社区昵称发言，不展示真实姓名。匿名树洞为独立入口，内容会经人工查看后再发布，以降低人身攻击与隐私泄露的风险。</p>
+      </details>
+      <details>
+        <summary>私聊为什么要求双方确认？</summary>
+        <p>这是爱情岛为了减少打扰而设的规则。只有发出邀请且对方接受，对话才会开启。岛民可以在设置中关闭私聊邀请，已开启的对话也能随时结束。</p>
+      </details>
+      <details>
+        <summary>岛内话题多久更新一次？</summary>
+        <p>话题区由各组组长每周整理一次，把有讨论价值的帖子置顶。兴趣小组的日常更新由岛民自己推动，热门回复会出现在首页的岛内话题入口。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" style="padding-top:0">
+    <div class="wrap">
+      <div class="join">
+        <div>
+          <h2>准备好登上爱情岛了吗</h2>
+          <p>注册后即可浏览全部公开话题，选择两个小组开始参与。如果你习惯先观察，也可以安静地待一阵，爱情岛不催促任何人发言。</p>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#topics">浏览岛内话题</a>
+          <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" aria-label="爱情岛首页">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#12798c"/>
+            <path d="M32 48c-9-6-16-11-16-18a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 7-7 12-16 18z" fill="#ffd9a0"/>
+          </svg>
+          <span>爱情岛</span>
+        </a>
+        <p>爱情岛是一个以岛民分享为核心的交友社区。我们相信，先聊得来，才有后面的故事。</p>
+        <p class="src-note">页面内容为社区介绍与岛民公开分享，具体规则以站内说明为准。</p>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#topics">岛内话题</a></li>
+          <li><a href="#stories">岛民故事</a></li>
+          <li><a href="#how">如何上岛</a></li>
+          <li><a href="#faq">常见问答</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#join">加入爱情岛</a></li>
+          <li><a href="#topics">浏览兴趣小组</a></li>
+          <li><a href="#faq">了解私聊规则</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 爱情岛 · 岛民共建的交友社区</span>
+      <span>爱情岛 · 慢一点，也能遇见</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
